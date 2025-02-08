@@ -59,7 +59,7 @@
         <p id="letter"></p>
     </div>
     <br>
-    <a class="answer-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfQJD59oK2T8rE22exkXSwfZoaWZJlnkAr5MHMNoRPz6lQdFw/viewform?usp=dialog" target="_blank">
+    <a class="answer-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf9larBSnN_EBXIxv1aWBkgUnXf_F9JCL7G_1krXd2awd0PIw/viewform?usp=dialog" target="_blank">
         📝 Write Your Reply
     </a>
 
@@ -108,15 +108,19 @@
         function generateLetter(gender) {
             const letters = {
                 "male": [
-                    "My dearest Penelope, I miss you more than words can say. Every night, I think of you and our home in Ithaca. The sea is my prison, and the gods test me again and again. I have faced storms, monsters, and men who wish to see me dead. Many times, I have been close to losing hope, but the thought of you gives me strength. I know you are waiting for me. I know you are faithful, just as I am faithful to you. It hurts me to think of strangers in our home, eating our food and trying to take my place. They do not know that I am still alive. They do not know that I will return. Tell our son, Telemachus, that his father has not forgotten him. I hope he grows strong and wise, like you. I hope he protects our home until I come back. I do not know how long the gods will keep me away, but no storm or enemy can stop me forever. One day, I will stand before you again, and our suffering will be over. Wait for me, my love. I am coming home.\n\nYours forever,\nOdysseus",
-                    "My beloved Helen, the sight of you haunts my dreams. The war rages on, but my heart is only with you. Each battle reminds me that we are apart. The gods watch, deciding our fate. Do you miss me as I miss you? I long to see your face and hold you once more. The war takes much from us, but I will not let it take my love for you. The walls of Troy rise high, but my devotion is higher. I hear whispers of fate and betrayal, but I care not for such things. My only concern is the fire that burns in my heart for you. Do not listen to the voices that say otherwise. One day, my sword will be lowered, and I will return to you as I have promised. Until the day I return, my love for you remains unbroken.\n\nYours,\nParis"
+                    "My dearest Penelope, my heart longs for the day I return. Until then, stay strong.\n\nYours forever,\nOdysseus",
+                    "My love Aspasia, your wisdom guides me even from afar. Athens prospers, but my heart belongs to you.\n\nYours,\nPericles"
                 ],
                 "female": [
-                    "My dearest Odysseus, It has been so many years since you left for war. I wait for you every day, hoping to see your ship on the horizon. Many people say you are dead, but I do not believe them. My heart tells me you are still alive. Our son, Telemachus, is growing. He was just a baby when you left, but now he is a man. He misses you, too. He asks about his father, and I tell him stories of your bravery and wisdom. Many men come to our home and ask me to marry them. They say you will never return. They eat our food, drink our wine, and waste everything we have. But I do not choose any of them. My heart belongs only to you. I try to delay them. I weave a cloth every day, and at night, I undo my work so it is never finished. I tell them I must finish it before I choose a husband. But how can I marry another? My only wish is to see you again. Please, if you are alive, come back to me. I do not need gold or riches. I only need you, my husband.\n\nFaithfully,\nPenelope",
-                    "My beloved Paris, I dream of our love, but the world calls me a betrayer. My heart longs for you, yet I am trapped by duty and fear. Do you still think of me? Do you regret taking me away? I know the gods have cursed us, but I do not regret choosing you. I live in a palace of gold, but none of it shines like the love I feel for you. They call me disloyal, a thief of hearts, but they do not understand that love is not something one steals. It is something that calls to the soul. I stand by my choice, even as war rages around us. If our love was a mistake, then let it be the most beautiful mistake the world has ever seen. Come back to me, my love, and let the world say what it will.\n\nYours always,\nHelen"
+                    "My dearest Odysseus, I wait for your ship each day, praying to the gods for your return.\n\nFaithfully,\nPenelope",
+                    "My love Pericles, Athens may not see me as your equal, but in your eyes, I am.\n\nYours,\nAspasia"
                 ]
             };
-            document.getElementById("letter").innerText = letters[gender][Math.floor(Math.random() * letters[gender].length)];
+            if (letters[gender]) {
+                document.getElementById("letter").innerText = letters[gender][Math.floor(Math.random() * letters[gender].length)];
+            } else {
+                console.error("Error: Invalid gender selection");
+            }
         }
     </script>
 </body>
