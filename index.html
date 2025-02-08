@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Letters from the Past</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff5733;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            background-color: #337aff;
+            color: white;
+        }
+        .answer-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            font-size: 18px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .letter-container {
+            text-align: left;
+            width: 60%;
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid #ff5733;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Created by Panagiotis Domvros 2025 (CC BY-NC)</h2>
+    <p>You have received a randomly selected letter from your loved one in Ancient Greece. You need to reply to that letter in the same manner as if you were the actual person.</p>
+    <button onclick="openHelpTab()">❓ Help</button>
+    <h1>📜 Letters from the Past 📜</h1>
+    <button onclick="generateLetter('male')">🚹 Receive a Letter from a Male</button>
+    <button onclick="generateLetter('female')">🚺 Receive a Letter from a Female</button>
+    <div class="letter-container">
+        <h3>💌 Letter Received</h3>
+        <p id="letter"></p>
+    </div>
+    <br>
+    <a class="answer-button" href="https://docs.google.com/forms/d/e/1FAIpQLSfQJD59oK2T8rE22exkXSwfZoaWZJlnkAr5MHMNoRPz6lQdFw/viewform?usp=dialog" target="_blank">
+        📝 Write Your Reply
+    </a>
+
+    <script>
+        function openHelpTab() {
+            const helpWindow = window.open('', '_blank', 'width=600,height=500');
+            helpWindow.document.write(`
+                <html>
+                <head>
+                    <title>Helpful Words & Phrases</title>
+                    <style>
+                        body { font-family: 'Comic Sans MS', cursive, sans-serif; text-align: center; padding: 20px; }
+                        h2 { color: #ff5733; }
+                        ul { text-align: left; display: inline-block; }
+                    </style>
+                </head>
+                <body>
+                    <h2>Useful Words & Phrases</h2>
+                    <ul>
+                        <li>✅ My love, your words fill me with hope because...</li>
+                        <li>❌ I feel lost without you, and my heart aches...</li>
+                        <li>🌊 The sea keeps us apart, but my heart stays with you...</li>
+                        <li>🏛️ I dream of the day we reunite in our home...</li>
+                        <li>⏳ Time moves slowly without you...</li>
+                        <li>🔥 My love for you burns like an eternal flame...</li>
+                        <li>🏹 The gods test me, but I remain strong for you...</li>
+                        <li>💔 My suffering is great, but the thought of you keeps me alive...</li>
+                        <li>⚖️ Though others whisper doubts, I remain faithful to you...</li>
+                        <li>🌿 I send this letter with all my love, hoping you receive it...</li>
+                        <li>👑 My heart belongs to you alone...</li>
+                        <li>🛡️ I stand strong against all who try to take your place...</li>
+                        <li>💞 No distance or time can weaken my devotion...</li>
+                        <li>🔮 I see you in my dreams, and I pray to the gods for our reunion...</li>
+                        <li>🌠 If the stars allow, I will return to your embrace...</li>
+                        <li>🏛️ The palace feels empty without you...</li>
+                        <li>🗡️ I fight for my return, knowing you wait for me...</li>
+                        <li>🍷 I long to sit with you again, sharing laughter and love...</li>
+                        <li>💖 Nothing in this world compares to your love...</li>
+                        <li>🔥 Until my last breath, I remain yours...</li>
+                    </ul>
+                </body>
+                </html>
+            `);
+        }
+
+        function generateLetter(gender) {
+            const letters = {
+                "male": [
+                    "My dearest Penelope, I miss you more than words can say. Every night, I think of you and our home in Ithaca. The sea is my prison, and the gods test me again and again. I have faced storms, monsters, and men who wish to see me dead. Many times, I have been close to losing hope, but the thought of you gives me strength. I know you are waiting for me. One day, I will stand before you again. Wait for me, my love. I am coming home.",
+                    "My beloved Helen, the sight of you haunts my dreams. The war rages on, but my heart is only with you. Each battle reminds me that we are apart. The gods watch, deciding our fate. Do you miss me as I miss you? I long to see your face and hold you once more. I do not know how long this war will last, but my love for you remains unbroken. Until the day I return, my heart is yours."
+                ],
+                "female": [
+                    "My dearest Odysseus, It has been so many years since you left for war. I wait for you every day, hoping to see your ship on the horizon. Many say you are dead, but my heart tells me you are alive. I try to delay those who ask for my hand. They do not understand that my love belongs only to you. If you are alive, return to me, for no one else could take your place. I will wait for you always.",
+                    "My beloved Paris, I dream of our love, but the world calls me a betrayer. My heart longs for you, yet I am trapped by duty and fear. Do you still think of me? Do you regret taking me away? I know the gods have cursed us, but I do not regret choosing you. If our love was a mistake, then let it be the most beautiful mistake the world has ever seen. Come back to me, my love."
+                ]
+            };
+            document.getElementById("letter").innerText = letters[gender][Math.floor(Math.random() * letters[gender].length)];
+        }
+    </script>
+</body>
+</html>
